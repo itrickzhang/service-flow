@@ -116,4 +116,5 @@ nodes:
 2020-06-22 22:25:22.098  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:54ms
 
 ```
-![wechat](/doc/wechat.jpg)
+了解更多
+![wechat](https://github.com/itrickzhang/service-flow/tree/master/doc/wechat.jpg)
