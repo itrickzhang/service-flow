@@ -3,7 +3,7 @@
 
 # 快速入门
 ## 依赖
-版本按时间情况给定
+版本按实际情况给定
 ```
 <dependency>
     <groupId>com.service.flow</groupId>
