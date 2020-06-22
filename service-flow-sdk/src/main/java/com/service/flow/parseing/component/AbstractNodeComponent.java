@@ -42,7 +42,7 @@ public abstract class AbstractNodeComponent implements NodeParser{
      * @return
      */
     public BaseOutput parserNode(Node node, BaseInput baseInput, BaseTemp baseTemp){
-        baseTemp.setFlowRecord(baseTemp.getFlowRecord().append(FlowConstants.NODEKEY+FlowConstants.NODE+node.getId()));
+        baseTemp.setFlowRecord(baseTemp.getFlowRecord().append(FlowConstants.NODEKEY+FlowConstants.NODE+FlowConstants.COLON+node.getId()));
         BaseOutput baseOutput = parser(node, baseInput, baseTemp);
         return baseOutput;
     };
