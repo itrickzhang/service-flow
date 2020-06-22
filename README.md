@@ -94,7 +94,7 @@ nodes:
       id: node6
       name: serviceInvoke
       component: /test:post:testApplication
-      desc: 方法节点调用
+      desc: 服务节点
       input: com.service.flow.sample.common.model.TestInput
       type: service
       next: node7
@@ -102,7 +102,7 @@ nodes:
       id: node7
       name: subFlow
       component: test2
-      desc: 方法节点调用
+      desc: 子流程节点
       input: com.service.flow.sample.common.model.TestInput
       type: subflow
 ```
