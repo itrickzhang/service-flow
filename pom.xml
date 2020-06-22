@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>com.service.flow</groupId>
+    <artifactId>service-flow-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>service-flow-sdk</module>
+        <module>service-flow-sample</module>
+        <module>service-flow-denpendencies</module>
+        <module>service-flow-spring-boot-starter</module>
+    </modules>
+
+    <properties>
+        <service.flow.dependencies.version>${project.version}</service.flow.dependencies.version>
+    </properties>
+
+
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.service.flow</groupId>
+            <artifactId>service-flow-denpendencies</artifactId>
+            <version>${service.flow.dependencies.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.service.flow</groupId>
+            <artifactId>service-flow-sdk</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.service.flow</groupId>
+            <artifactId>service-flow-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
+</project>

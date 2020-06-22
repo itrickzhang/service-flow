@@ -1,0 +1,15 @@
+name: openAccount
+id: test2
+desc: 条件执行
+input: com.service.flow.parseing.TestInput
+output: com.service.flow.parseing.TestOutput
+temp: com.service.flow.parseing.TestTemp
+startNode: node1
+nodes:
+  - node:
+      id: node1
+      name: methodInvoke
+      component: com.service.flow.parseing.TestComponent:test1
+      desc: 单节点执行
+      input: com.service.flow.sample.common.model.TestInput
+      type: method
