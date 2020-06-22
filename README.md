@@ -99,12 +99,12 @@ nodes:
       type: service
       next: node7
   - node:
-        id: node7
-        name: subFlow
-        component: test2
-        desc: 方法节点调用
-        input: com.service.flow.sample.common.model.TestInput
-        type: subflow
+      id: node7
+      name: subFlow
+      component: test2
+      desc: 方法节点调用
+      input: com.service.flow.sample.common.model.TestInput
+      type: subflow
 ```
 ## 执行结果
 ```
