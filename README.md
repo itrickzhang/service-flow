@@ -108,12 +108,12 @@ nodes:
 ```
 ## 执行结果
 ```
-2020-06-22 22:25:22.097  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : result:Test{name='zhangsan', age=18}
-2020-06-22 22:25:22.097  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : record:Flow:test2->Nodenode1
-2020-06-22 22:25:22.097  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:0ms
-2020-06-22 22:25:22.098  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : result:Test{name='zhangsan', age=18}
-2020-06-22 22:25:22.098  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : record:Flow:test->Nodenode1->Nodenode2->Nodenode3->Nodenode5->Nodenode6->Nodenode7
-2020-06-22 22:25:22.098  INFO 19044 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:54ms
+2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : result:Test{name='zhangsan', age=18}
+2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : record:Flow:test2->Node:node1
+2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:0ms
+2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : result:Test{name='zhangsan', age=18}
+2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : record:Flow:test->Node:node1->Node:node2->Node:node3->Node:node5->Node:node6->Node:node7
+2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:52ms
 
 ```
 了解更多
