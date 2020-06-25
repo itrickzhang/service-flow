@@ -7,9 +7,12 @@ import com.service.flow.model.BaseTemp;
 import com.service.flow.model.Node;
 import com.service.flow.parseing.FlowParserHandler;
 import com.service.flow.parseing.component.AbstractNodeComponent;
+import com.service.flow.parseing.component.NodeComponentFactory;
+import com.service.flow.parseing.component.NodeParser;
 import com.service.flow.util.SpleUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -24,6 +27,8 @@ public class ConditionNodeComponent extends AbstractNodeComponent {
 
     private Logger logger = LoggerFactory.getLogger(ConditionNodeComponent.class);
 
+    private int count = 0;
+
     @Override
     public BaseOutput parser(Node node, BaseInput baseInput, BaseTemp baseTemp) {
         logger.debug("Start execution condition node{NodeId:{},NodeName:{}}",node.getId(),node.getName());
@@ -36,8 +41,20 @@ public class ConditionNodeComponent extends AbstractNodeComponent {
             if(Boolean.parseBoolean(eval.toString())){
                 String nodeStr = split1[1];
                 Node nodeByCondition = nodeMap.get(nodeStr);
-                FlowParserHandler flowParserHandler = new FlowParserHandler();
-                output.set(flowParserHandler.execNode(nodeByCondition, baseInput, baseTemp, nodeMap));
+                String nextNode = nodeByCondition.getNext();
+                if(!StringUtils.isEmpty(nextNode)){
+                    FlowParserHandler flowParserHandler = new FlowParserHandler();
+                    output.set(flowParserHandler.execNode(nodeByCondition, baseInput, baseTemp, nodeMap));
+                }else{
+                    //解决循环执行节点问题
+                    count++;
+                    if(count==1) {
+                        String type = nodeByCondition.getType();
+                        NodeParser nodeInstance = NodeComponentFactory.getNodeInstance(type);
+                        nodeInstance.setNodeMap(nodeMap);
+                        output.set(nodeInstance.parserNode(nodeByCondition, baseInput, baseTemp));
+                    }
+                }
             }
         });
         logger.debug("End of execution condition node{NodeId:{},NodeName:{}}",node.getId(),node.getName());
