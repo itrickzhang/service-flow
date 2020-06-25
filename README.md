@@ -116,5 +116,8 @@ nodes:
 2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:52ms
 
 ```
-了解更多
+相关文章
+* [实战项目：设计实现一个流程编排框架(分析)](https://mp.weixin.qq.com/s/veLQZJqYNKbYvuCi7Pf_nA)
+* [实战项目：设计实现一个流程编排框架(设计)](https://mp.weixin.qq.com/s/vL_ExJci7eiym9aizChtAQ)
+* [实战项目：设计实现一个流程编排框架(实现)](https://mp.weixin.qq.com/s/2MOWIZ4emkQltEgFzja4SA)
 ![wechat](/doc/wechat.jpg)
