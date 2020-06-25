@@ -117,4 +117,4 @@ nodes:
 
 ```
 了解更多
-![wechat](https://github.com/itrickzhang/service-flow/blob/master/doc/wechat.jpg)
+![wechat](/doc/wechat.jpg)
