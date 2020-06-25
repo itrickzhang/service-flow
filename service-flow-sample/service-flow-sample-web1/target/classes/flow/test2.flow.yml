@@ -1,15 +1,32 @@
-name: openAccount
+name: addCount
 id: test2
-desc: 条件执行
-input: com.service.flow.sample.common.model.TestInput
-output: com.service.flow.sample.common.model.TestOutput
-temp: com.service.flow.sample.common.model.TestTemp
+desc: bean节点执行
+input: com.service.flow.sample.common.test2.Test2Input
+output: com.service.flow.sample.common.test2.Test2Output
+temp: com.service.flow.sample.common.test2.Test2Temp
 startNode: node1
 nodes:
   - node:
       id: node1
-      name: methodInvoke
-      component: com.service.flow.sample.common.component.TestComponent:test1
-      desc: 单节点执行
-      input: com.service.flow.sample.common.model.TestInput
-      type: method
+      name: methodNode1
+      component: test2Component:count
+      desc: 数量+1
+      input: com.service.flow.sample.common.test2.Test2Input
+      type: bean
+      next: node2
+  - node:
+      id: node2
+      name: methodNode2
+      component: test2Component:count:count
+      desc: 数量+1
+      input: com.service.flow.sample.common.test2.Test2Input
+      type: bean
+      next: node3
+  - node:
+      id: node3
+      name: methodNode3
+      component: test2Component:count
+      desc: 数量+1
+      input: com.service.flow.sample.common.test2.Test2Input
+      type: bean
+
