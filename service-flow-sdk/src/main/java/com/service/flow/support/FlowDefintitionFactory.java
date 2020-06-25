@@ -33,7 +33,7 @@ public class FlowDefintitionFactory {
             try {
                 flowDefintitionMap.putAll(flowDefintionRegistry.registry());
             } catch (Exception e) {
-                throw new FlowException("Flow loading exception");
+                throw new FlowException("Flow loading exception",e);
             }
         });
     }

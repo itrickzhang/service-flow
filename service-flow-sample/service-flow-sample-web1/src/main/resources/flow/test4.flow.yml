@@ -1,0 +1,16 @@
+name: service
+id: test4
+desc: 服务节点执行
+input: com.service.flow.sample.common.test3.Test3Input
+output: com.service.flow.sample.common.test3.Test3Output
+temp: com.service.flow.sample.common.test3.Test3Temp
+startNode: node1
+nodes:
+  - node:
+      id: node1
+      name: serviceInvoke
+      component: /test:post:testApplication
+      desc: 方法节点调用
+      input: com.service.flow.sample.common.test3.Test3Input
+      type: service
+

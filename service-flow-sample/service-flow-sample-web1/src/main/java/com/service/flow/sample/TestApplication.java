@@ -4,6 +4,7 @@ import com.service.flow.api.IFlowHandler;
 import com.service.flow.sample.common.model.TestInput;
 import com.service.flow.sample.common.test1.Test1Input;
 import com.service.flow.sample.common.test2.Test2Input;
+import com.service.flow.sample.common.test3.Test3Input;
 import com.service.flow.util.SpringContextUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,11 +25,27 @@ public class TestApplication {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(TestApplication.class, args);
         //test1(applicationContext);
         //test2(applicationContext);
-        test3(applicationContext);
+        //test3(applicationContext);
+        //test4(applicationContext);
+        test5(applicationContext);
+    }
+
+    private static void test5(ConfigurableApplicationContext applicationContext) {
+        Test3Input input = new Test3Input();
+        input.setCount(0);
+        IFlowHandler flowHandler = applicationContext.getBean(IFlowHandler.class);
+        flowHandler.execute("test5", input);
+    }
+
+    private static void test4(ConfigurableApplicationContext applicationContext) {
+        Test3Input input = new Test3Input();
+        input.setCount(0);
+        IFlowHandler flowHandler = applicationContext.getBean(IFlowHandler.class);
+        flowHandler.execute("test4", input);
     }
 
     private static void test3(ConfigurableApplicationContext applicationContext) {
-        Test2Input input = new Test2Input();
+        Test3Input input = new Test3Input();
         input.setCount(0);
         IFlowHandler flowHandler = applicationContext.getBean(IFlowHandler.class);
         flowHandler.execute("test3", input);

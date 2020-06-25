@@ -1,6 +1,6 @@
-name: addCount
+name: loop
 id: test3
-desc: 条件节点执行
+desc: 循环点执行
 input: com.service.flow.sample.common.test3.Test3Input
 output: com.service.flow.sample.common.test3.Test3Output
 temp: com.service.flow.sample.common.test3.Test3Temp
