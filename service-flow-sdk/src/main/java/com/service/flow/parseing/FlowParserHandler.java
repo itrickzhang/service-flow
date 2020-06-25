@@ -33,6 +33,8 @@ public class FlowParserHandler {
         NodeParser nodeInstance = NodeComponentFactory.getNodeInstance(type);
         nodeInstance.setNodeMap(nodeMap);
         BaseOutput output = nodeInstance.parserNode(node, baseInput,baseTemp);
+        BeanUtils.copyProperties(output,baseTemp);
+        BeanUtils.copyProperties(baseTemp,baseInput);
         String nextNode = node.getNext();
         if(!StringUtils.isEmpty(nextNode)){
             Node nodeNext = nodeMap.get(nextNode);

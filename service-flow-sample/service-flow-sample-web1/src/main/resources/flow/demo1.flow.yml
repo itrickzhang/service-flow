@@ -1,0 +1,60 @@
+name: openAccount
+id: demo1
+desc: 条件执行
+input: com.service.flow.sample.common.model.TestInput
+output: com.service.flow.sample.common.model.TestOutput
+temp: com.service.flow.sample.common.model.TestTemp
+startNode: node1
+nodes:
+  - node:
+      id: node1
+      name: methodInvoke
+      component: com.service.flow.sample.common.component.TestComponent:test1
+      desc: 单节点执行
+      input: com.service.flow.sample.common.model.TestInput
+      type: method
+      next: node2
+  - node:
+      id: node2
+      name: beanInvoke
+      component: testComponent:test2
+      desc: 单节点执行
+      input: com.service.flow.sample.common.model.TestInput
+      type: bean
+      next: node3
+  - node:
+      id: node3
+      name: conditionByAge
+      component: age>20:node4,age<20:node5
+      desc: 条件节点执行
+      type: condition
+  - node:
+      id: node4
+      name: beanInvoke
+      component: testComponent:test4
+      desc: bean节点执行
+      input: com.service.flow.sample.common.model.TestInput
+      type: bean
+  - node:
+      id: node5
+      name: beanInvoke
+      component: testComponent:test5
+      desc: bean节点执行
+      input: com.service.flow.sample.common.model.TestInput
+      type: bean
+      next: node6
+  - node:
+      id: node6
+      name: serviceInvoke
+      component: /test:post:testApplication
+      desc: 方法节点调用
+      input: com.service.flow.sample.common.model.TestInput
+      type: service
+      next: node7
+  - node:
+        id: node7
+        name: subFlow
+        component: test2
+        desc: 方法节点调用
+        input: com.service.flow.sample.common.model.TestInput
+        type: subflow

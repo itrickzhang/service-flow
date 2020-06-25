@@ -1,0 +1,30 @@
+name: addCount
+id: test3
+desc: 条件节点执行
+input: com.service.flow.sample.common.test3.Test3Input
+output: com.service.flow.sample.common.test3.Test3Output
+temp: com.service.flow.sample.common.test3.Test3Temp
+startNode: node1
+nodes:
+  - node:
+      id: node1
+      name: methodNode1
+      component: count<5:node2,count>=5:node3
+      desc: 数量条件判断
+      type: condition
+  - node:
+      id: node2
+      name: methodNode2
+      component: test3Component:count
+      desc: 数量+1
+      input: com.service.flow.sample.common.test3.Test3Input
+      type: bean
+      next: node1
+  - node:
+      id: node3
+      name: methodNode3
+      component: test3Component:count5
+      desc: 数量+5
+      input: com.service.flow.sample.common.test3.Test3Input
+      type: bean
+
