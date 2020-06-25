@@ -116,6 +116,12 @@ nodes:
 2020-06-22 22:43:30.607  INFO 7276 --- [           main] com.service.flow.web.api.FlowHandler     : totalTime:52ms
 
 ```
+## 相关示例
+* 方法节点:[/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test1.flow.yml](/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test1.flow.yml)
+* bean节点:[/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test2.flow.yml](/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test2.flow.yml)
+* 条件节点(循环节点):[/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test3.flow.yml](/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test3.flow.yml)
+* 服务调用节点:[/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test4.flow.yml](/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test4.flow.yml)
+* 子流程节点:[/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test5.flow.yml](/service-flow-sample/service-flow-sample-web1/src/main/resources/flow/test5.flow.yml)
 相关文章
 * [实战项目：设计实现一个流程编排框架(分析)](https://mp.weixin.qq.com/s/veLQZJqYNKbYvuCi7Pf_nA)
 * [实战项目：设计实现一个流程编排框架(设计)](https://mp.weixin.qq.com/s/vL_ExJci7eiym9aizChtAQ)
