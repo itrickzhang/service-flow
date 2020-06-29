@@ -1,6 +1,7 @@
 package com.service.flow.index.dto;
 
 import com.service.flow.api.DTO;
+import com.service.flow.index.ReflectionsScan;
 import org.reflections.Reflections;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.util.ReflectionUtils;
@@ -25,8 +26,8 @@ public class DTOClassLoader {
         this.dtoDefinitionMap = new HashMap<>();
     }
 
-    public void load() {
-        Reflections reflections = new Reflections("com.service");
+    public void load(String scanName) {
+        Reflections reflections = ReflectionsScan.scan(scanName);
         Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(DTO.class);
         Iterator<Class<?>> iterator = typesAnnotatedWith.iterator();
         while (iterator.hasNext()){
