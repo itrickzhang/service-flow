@@ -13,7 +13,8 @@
         <spring.cloud.dependencies.version>Hoxton.SR4</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
         <fatjson.version>1.2.68</fatjson.version>
-        <reflections.version>0.9.11</reflections.version>
+        <reflections.version>0.9.12</reflections.version>
+        <javassist.version>3.26.0-GA</javassist.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -47,6 +48,11 @@
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${reflections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

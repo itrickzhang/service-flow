@@ -18,4 +18,6 @@ public @interface Flow {
     String name();
 
     FlowTypeEnum type() default FlowTypeEnum.METHOD;
+
+    String desc() default "";
 }
