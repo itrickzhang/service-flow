@@ -1,7 +1,5 @@
 package com.service.flow.api;
 
-import org.springframework.core.annotation.Order;
-
 import java.lang.annotation.*;
 
 /**
@@ -15,4 +13,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface DTO {
 
+    String value() default "";
+
+    String desc() default "";
 }

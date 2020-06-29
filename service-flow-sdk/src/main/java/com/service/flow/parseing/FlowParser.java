@@ -2,14 +2,11 @@ package com.service.flow.parseing;
 
 import com.service.flow.constant.FlowConstants;
 import com.service.flow.model.*;
-import com.service.flow.parseing.component.NodeComponentFactory;
-import com.service.flow.parseing.component.NodeParser;
 import com.service.flow.util.ClassUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StopWatch;
-import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.util.Map;
@@ -26,7 +23,7 @@ public class FlowParser {
 
     private BaseTemp baseTemp;
 
-    private FlowDefintition defintition;
+    private FlowDefintion defintition;
 
     private String record;
 
@@ -34,7 +31,7 @@ public class FlowParser {
 
     private Logger logger = LoggerFactory.getLogger(FlowParser.class);
 
-    public FlowParser(FlowDefintition defintition){
+    public FlowParser(FlowDefintion defintition){
        this.nodeMap = defintition.getNodeMap();
        this.defintition = defintition;
        this.baseTemp = ClassUtil.newInstance(defintition.getTemp(), BaseTemp.class);

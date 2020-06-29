@@ -4,12 +4,12 @@ desc: 子流程节点执行
 input: com.service.flow.sample.common.test3.Test3Input
 output: com.service.flow.sample.common.test3.Test3Output
 temp: com.service.flow.sample.common.test3.Test3Temp
-startNode: node1
+startNode: subFlowNode1
 nodes:
   - node:
-      id: node1
+      id: subFlowNode1
       name: subFlowNode1
-      component: test3
+      component: test1
       desc: 子流程节点
       input: com.service.flow.sample.common.test3.Test3Input
       type: subflow

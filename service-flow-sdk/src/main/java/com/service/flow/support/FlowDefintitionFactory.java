@@ -1,7 +1,7 @@
 package com.service.flow.support;
 
 import com.service.flow.exception.FlowException;
-import com.service.flow.model.FlowDefintition;
+import com.service.flow.model.FlowDefintion;
 import com.service.flow.support.yml.YmlFlowDefintionRegistry;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class FlowDefintitionFactory {
 
     public  static List<FlowDefintionRegistry> flowDefintionRegistries = new ArrayList<>();
 
-    public static Map<String, FlowDefintition> flowDefintitionMap = new HashMap<>();
+    public static Map<String, FlowDefintion> flowDefintitionMap = new HashMap<>();
 
     static {
         flowDefintionRegistries.add(new YmlFlowDefintionRegistry());

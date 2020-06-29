@@ -2,7 +2,7 @@ package com.service.flow.support.yml;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.service.flow.model.FlowDefintition;
+import com.service.flow.model.FlowDefintion;
 import com.service.flow.model.Node;
 import com.service.flow.support.FlowDefintionRegistry;
 import org.springframework.beans.factory.config.YamlMapFactoryBean;
@@ -25,7 +25,7 @@ public class YmlFlowDefintionRegistry implements FlowDefintionRegistry {
     private final String CLASSPATH_FLOW="flow/*.flow.yml";
 
     @Override
-    public Map<String, FlowDefintition> registry() throws Exception{
+    public Map<String, FlowDefintion> registry() throws Exception{
         return registryModel();
     }
 
@@ -34,10 +34,10 @@ public class YmlFlowDefintionRegistry implements FlowDefintionRegistry {
      * @return
      * @throws Exception
      */
-    public Map<String, FlowDefintition> registryModel() throws Exception {
+    public Map<String, FlowDefintion> registryModel() throws Exception {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = resolver.getResources(CLASSPATH_FLOW);
-        Map<String,FlowDefintition> flowMap = new HashMap<>();
+        Map<String, FlowDefintion> flowMap = new HashMap<>();
         Arrays.stream(resources).forEach(resource->{
             YamlMapFactoryBean yamlMapFactoryBean = new YamlMapFactoryBean();
             yamlMapFactoryBean.setResources(resource);
@@ -49,8 +49,8 @@ public class YmlFlowDefintionRegistry implements FlowDefintionRegistry {
         return flowMap;
     }
 
-    private FlowDefintition buildFlowDefintition(YmlFlow flow){
-        FlowDefintition flowDefintition = new FlowDefintition();
+    private FlowDefintion buildFlowDefintition(YmlFlow flow){
+        FlowDefintion flowDefintition = new FlowDefintion();
         flowDefintition.setId(flow.getId());
         flowDefintition.setName(flow.getName());
         flowDefintition.setDesc(flow.getDesc());
