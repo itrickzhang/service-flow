@@ -9,7 +9,10 @@ import java.util.Map;
  * @createTime 2020年06月22日 06:49:00
  */
 public interface FlowHandlerInterceptor {
+
     Map<String,Object> beforeHandle();
+
     Map<String,Object> afterHandle();
+
     Map<String,Object> ExceptionHandle();
 }

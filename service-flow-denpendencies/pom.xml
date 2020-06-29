@@ -13,6 +13,7 @@
         <spring.cloud.dependencies.version>Hoxton.SR4</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
         <fatjson.version>1.2.68</fatjson.version>
+        <reflections.version>0.9.11</reflections.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -42,7 +43,11 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fatjson.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

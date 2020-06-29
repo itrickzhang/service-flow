@@ -1,12 +1,10 @@
 package com.service.flow.support;
 
-import com.service.flow.model.FlowDefintition;
+import com.service.flow.model.FlowDefintion;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author zhangcb
@@ -20,7 +18,7 @@ class FlowDefintitionFactoryTest {
     void initDefintionFactory() {
         FlowDefintitionFactory flowDefintitionFactory = new FlowDefintitionFactory();
         flowDefintitionFactory.initDefintionFactory();
-        Map<String, FlowDefintition> flowDefintitionMap = flowDefintitionFactory.flowDefintitionMap;
+        Map<String, FlowDefintion> flowDefintitionMap = flowDefintitionFactory.flowDefintitionMap;
         Assert.assertEquals(true,flowDefintitionMap.containsKey("test"));
     }
 }

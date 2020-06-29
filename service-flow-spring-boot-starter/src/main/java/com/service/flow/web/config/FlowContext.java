@@ -1,6 +1,6 @@
 package com.service.flow.web.config;
 
-import com.service.flow.model.FlowDefintition;
+import com.service.flow.model.FlowDefintion;
 
 import java.util.Map;
 
@@ -12,17 +12,17 @@ import java.util.Map;
  */
 public class FlowContext {
 
-    private Map<String, FlowDefintition> flowDefintitionMap;
+    private Map<String, FlowDefintion> flowDefintitionMap;
 
-    public Map<String, FlowDefintition> getFlowDefintitionMap() {
+    public Map<String, FlowDefintion> getFlowDefintitionMap() {
         return flowDefintitionMap;
     }
 
-    public void setFlowDefintitionMap(Map<String, FlowDefintition> flowDefintitionMap) {
+    public void setFlowDefintitionMap(Map<String, FlowDefintion> flowDefintitionMap) {
         this.flowDefintitionMap = flowDefintitionMap;
     }
 
-    public FlowDefintition getFlowDefinition(String flowId){
+    public FlowDefintion getFlowDefinition(String flowId){
         return flowDefintitionMap.get(flowId);
     }
 

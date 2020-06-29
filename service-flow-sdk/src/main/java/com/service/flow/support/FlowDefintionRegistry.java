@@ -1,6 +1,6 @@
 package com.service.flow.support;
 
-import com.service.flow.model.FlowDefintition;
+import com.service.flow.model.FlowDefintion;
 
 import java.util.Map;
 
@@ -16,5 +16,5 @@ public interface FlowDefintionRegistry {
      * @return
      * @throws Exception
      */
-    Map<String, FlowDefintition> registry() throws Exception;
+    Map<String, FlowDefintion> registry() throws Exception;
 }

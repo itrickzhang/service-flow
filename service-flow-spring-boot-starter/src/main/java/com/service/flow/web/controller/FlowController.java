@@ -1,6 +1,6 @@
 package com.service.flow.web.controller;
 
-import com.service.flow.model.FlowDefintition;
+import com.service.flow.model.FlowDefintion;
 import com.service.flow.web.config.FlowContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class FlowController {
     private FlowContext flowContext;
 
     @GetMapping
-    public Map<String, FlowDefintition> getAllFlows(){
+    public Map<String, FlowDefintion> getAllFlows(){
        return flowContext.getFlowDefintitionMap();
     }
 }
