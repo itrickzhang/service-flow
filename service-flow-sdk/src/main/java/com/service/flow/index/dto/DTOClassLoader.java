@@ -33,11 +33,11 @@ public class DTOClassLoader {
         while (iterator.hasNext()){
             Class<?> clazz = iterator.next();
             DTO annotation = clazz.getAnnotation(DTO.class);
-            String className = clazz.getName();
-            String value = StringUtils.isEmpty(annotation.value())?className:annotation.value();;
+            String simpleName = clazz.getSimpleName();
+            String value = StringUtils.isEmpty(annotation.value())?simpleName:annotation.value();;
             String desc = annotation.desc();
             DTODefinition dtoDefinition = new DTODefinition();
-            dtoDefinition.setClassName(className);
+            dtoDefinition.setClassName(clazz.getName());
             dtoDefinition.setValue(value);
             dtoDefinition.setDesc(desc);
             dtoDefinitionMap.put(value,dtoDefinition);

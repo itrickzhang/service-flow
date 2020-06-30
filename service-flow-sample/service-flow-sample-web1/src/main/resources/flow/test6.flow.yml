@@ -1,0 +1,32 @@
+name: addCount
+id: test6
+desc: 方法节点执行
+input: Test1Input
+output: Test1Output
+temp: Test1Temp
+startNode: methodNode1
+nodes:
+    - node:
+          id: methodNode1
+          name: methodNode1
+          component: count
+          desc: 数量+1
+          input: Test1Input
+          type: method
+          next: methodNode2
+    - node:
+          id: methodNode2
+          name: methodNode2
+          component: count
+          desc: 数量+1
+          input: Test1Input
+          type: method
+          next: methodNode3
+    - node:
+          id: methodNode3
+          name: methodNode3
+          component: count
+          desc: 数量+1
+          input: Test1Input
+          type: method
+

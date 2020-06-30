@@ -1,5 +1,6 @@
 package com.service.flow.sample.common.test1;
 
+import com.service.flow.api.DTO;
 import com.service.flow.model.BaseInput;
 
 /**
@@ -8,6 +9,7 @@ import com.service.flow.model.BaseInput;
  * @Description TODO
  * @createTime 2020年06月25日 07:01:00
  */
+@DTO
 public class Test1Input extends BaseInput {
     private int count;
 
