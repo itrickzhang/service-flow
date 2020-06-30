@@ -45,6 +45,7 @@ public class TestComponent {
 # 流程定义
 ## 新增流程文件
 在resources/flow下新建test.flow.yml
+**非注解方式**
 ```
 name: openAccount
 id: test
@@ -106,6 +107,42 @@ nodes:
       desc: 子流程节点
       input: com.service.flow.sample.common.model.TestInput
       type: subflow
+```
+**注解方式**
+```
+name: addCount
+id: test6
+desc: 方法节点执行
+input: Test1Input
+output: Test1Output
+temp: Test1Temp
+startNode: methodNode1
+nodes:
+    - node:
+          id: methodNode1
+          name: methodNode1
+          component: count
+          desc: 数量+1
+          input: Test1Input
+          type: method
+          next: methodNode2
+    - node:
+          id: methodNode2
+          name: methodNode2
+          component: count
+          desc: 数量+1
+          input: Test1Input
+          type: method
+          next: methodNode3
+    - node:
+          id: methodNode3
+          name: methodNode3
+          component: count
+          desc: 数量+1
+          input: Test1Input
+          type: method
+
+
 ```
 ## 执行结果
 ```
