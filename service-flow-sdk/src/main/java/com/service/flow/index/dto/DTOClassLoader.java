@@ -1,6 +1,7 @@
 package com.service.flow.index.dto;
 
 import com.service.flow.api.DTO;
+import com.service.flow.exception.FlowException;
 import com.service.flow.index.ReflectionsScan;
 import org.reflections.Reflections;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -40,6 +41,9 @@ public class DTOClassLoader {
             dtoDefinition.setClassName(clazz.getName());
             dtoDefinition.setValue(value);
             dtoDefinition.setDesc(desc);
+            if(dtoDefinitionMap.containsKey(value)){
+                throw new FlowException(value+"重复定义："+clazz.getName()+","+dtoDefinitionMap.get(value).getClassName());
+            }
             dtoDefinitionMap.put(value,dtoDefinition);
         }
     }
