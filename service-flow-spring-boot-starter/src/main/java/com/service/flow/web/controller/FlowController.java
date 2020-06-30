@@ -1,7 +1,7 @@
 package com.service.flow.web.controller;
 
 import com.service.flow.model.FlowDefintion;
-import com.service.flow.web.config.FlowContext;
+import com.service.flow.web.context.FlowContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

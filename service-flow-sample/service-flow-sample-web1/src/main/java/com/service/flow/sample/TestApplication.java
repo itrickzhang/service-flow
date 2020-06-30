@@ -6,6 +6,7 @@ import com.service.flow.sample.common.test1.Test1Input;
 import com.service.flow.sample.common.test2.Test2Input;
 import com.service.flow.sample.common.test3.Test3Input;
 import com.service.flow.util.SpringContextUtil;
+import com.service.flow.web.api.AnnotationFlowHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -27,7 +28,15 @@ public class TestApplication {
         //test2(applicationContext);
         //test3(applicationContext);
         //test4(applicationContext);
-        test5(applicationContext);
+        //test5(applicationContext);
+        test6(applicationContext);
+    }
+
+    private static void test6(ConfigurableApplicationContext applicationContext) {
+        Test3Input input = new Test3Input();
+        input.setCount(0);
+        IFlowHandler flowHandler = applicationContext.getBean(AnnotationFlowHandler.class);
+        flowHandler.execute("test6", input);
     }
 
     private static void test5(ConfigurableApplicationContext applicationContext) {
