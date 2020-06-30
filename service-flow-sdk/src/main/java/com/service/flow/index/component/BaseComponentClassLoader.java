@@ -3,6 +3,7 @@ package com.service.flow.index.component;
 import com.service.flow.api.DTO;
 import com.service.flow.api.Flow;
 import com.service.flow.api.FlowTypeEnum;
+import com.service.flow.exception.FlowException;
 import com.service.flow.index.ReflectionsScan;
 import com.service.flow.index.dto.DTODefinition;
 import org.reflections.Reflections;
@@ -48,6 +49,9 @@ public class BaseComponentClassLoader {
             componentDefinition.setClassName(className);
             componentDefinition.setMethodName(methodName);
             componentDefinition.setDesc(desc);
+            if(componentDefinitionMap.containsKey(name)){
+                throw new FlowException(name+"重复定义："+className+","+componentDefinitionMap.get(name).getClassName());
+            }
             this.componentDefinitionMap.put(name,componentDefinition);
         }
     }
