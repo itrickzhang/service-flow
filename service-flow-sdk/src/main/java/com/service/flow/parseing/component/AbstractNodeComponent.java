@@ -5,8 +5,8 @@ import com.service.flow.model.BaseInput;
 import com.service.flow.model.BaseOutput;
 import com.service.flow.model.BaseTemp;
 import com.service.flow.model.Node;
+import com.service.flow.util.BeanUtils;
 import com.service.flow.util.ClassUtil;
-import org.springframework.beans.BeanUtils;
 
 import java.util.Map;
 

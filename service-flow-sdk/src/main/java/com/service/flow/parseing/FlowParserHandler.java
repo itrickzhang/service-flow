@@ -7,7 +7,7 @@ import com.service.flow.model.BaseTemp;
 import com.service.flow.model.Node;
 import com.service.flow.parseing.component.NodeComponentFactory;
 import com.service.flow.parseing.component.NodeParser;
-import org.springframework.beans.BeanUtils;
+import com.service.flow.util.BeanUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.Map;
@@ -40,6 +40,7 @@ public class FlowParserHandler {
             Node nodeNext = nodeMap.get(nextNode);
             output = execNode(nodeNext,baseInput,baseTemp,nodeMap);
         }
+        BeanUtils.copyProperties(baseTemp,output);
         return output;
     }
 

@@ -5,6 +5,7 @@ import com.service.flow.sample.common.model.TestInput;
 import com.service.flow.sample.common.test1.Test1Input;
 import com.service.flow.sample.common.test2.Test2Input;
 import com.service.flow.sample.common.test3.Test3Input;
+import com.service.flow.sample.common.test4.RefundRequest;
 import com.service.flow.util.SpringContextUtil;
 import com.service.flow.web.api.AnnotationFlowHandler;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +30,17 @@ public class TestApplication {
         //test3(applicationContext);
         //test4(applicationContext);
         //test5(applicationContext);
-        test6(applicationContext);
+        //test6(applicationContext);
+        testRefund(applicationContext);
+    }
+
+    private static void testRefund(ConfigurableApplicationContext applicationContext) {
+        RefundRequest refundRequest = new RefundRequest();
+        refundRequest.setAccount("1111");
+        refundRequest.setName("zhangsan");
+        refundRequest.setMoney("20");
+        IFlowHandler flowHandler = applicationContext.getBean(AnnotationFlowHandler.class);
+        flowHandler.execute("refund", refundRequest);
     }
 
     private static void test6(ConfigurableApplicationContext applicationContext) {
