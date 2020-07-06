@@ -2,10 +2,10 @@ package com.service.flow.parseing;
 
 import com.service.flow.constant.FlowConstants;
 import com.service.flow.model.*;
+import com.service.flow.util.BeanUtils;
 import com.service.flow.util.ClassUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.util.StopWatch;
 
 import java.io.IOException;
