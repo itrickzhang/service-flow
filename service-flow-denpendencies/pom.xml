@@ -12,7 +12,7 @@
         <spring.boot.dependencies.version>2.2.0.RELEASE</spring.boot.dependencies.version>
         <spring.cloud.dependencies.version>Hoxton.SR4</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
-        <fatjson.version>1.2.68</fatjson.version>
+        <fatjson.version>1.2.83</fatjson.version>
         <reflections.version>0.9.12</reflections.version>
         <javassist.version>3.26.0-GA</javassist.version>
     </properties>
